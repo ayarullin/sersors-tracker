@@ -91,6 +91,12 @@ public class MainService extends Service {
 				entity.data.add((double) location.getSpeed());
 				entity.data.add(location.getAltitude());
 				entity.data.add((double) location.getAccuracy());
+				
+				try {
+					pushQueue.put(entity);
+				} catch (InterruptedException e) {
+					Log.d(TAG, "GPS onLocationChanged Interrupted: " + e.getMessage());
+				}
 			}
 		}
 

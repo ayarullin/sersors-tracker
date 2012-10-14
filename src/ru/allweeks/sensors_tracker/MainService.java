@@ -170,13 +170,13 @@ public class MainService extends Service {
 			if (sdState.equals(android.os.Environment.MEDIA_MOUNTED)) 
 			{
 				File sdDir = android.os.Environment.getExternalStorageDirectory();
-	            File file = new File(sdDir, "track_data.txt");
-	            try {
-	                fileWriter = new FileWriter(file);
-	                fileWriter.write("DEBUG: " + String.valueOf(System.currentTimeMillis()) + " service started\n");
-	            } catch (IOException e) {
-	            	Log.d(TAG, "FileWriter: " + e.getMessage());
-	            }
+				File file = new File(sdDir, "track_data.txt");
+				try {
+					fileWriter = new FileWriter(file);
+					fileWriter.write("DEBUG: " + String.valueOf(System.currentTimeMillis()) + " service started\n");
+				} catch (IOException e) {
+					Log.d(TAG, "FileWriter: " + e.getMessage());
+				}
 			}
 			else
 			{
